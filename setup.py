@@ -7,7 +7,7 @@ README = (ROOT_DIR / "README.md").read_text()
 
 setup(
     name="poem_parser",
-    version="0.0.1",
+    version="0.0.2",
     description="Parse poems into stressed and unstressed syllables.",
     long_description=README,
     long_description_content_type="text/markdown",
@@ -20,6 +20,7 @@ setup(
         "Programming Language :: Python :: 3",
         "Programming Language :: Python :: 3.7",
     ],
+    packages=find_packages(),
     include_package_data=True,
     install_requires=["prosodic"],
 )
