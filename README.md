@@ -10,12 +10,15 @@ $ pip install poem_parser
 ## Example usage
 To parse a line:
 ```bash
-$ python -m poem_parser "Shall I compare thee to a summer's day?"
+$ python -m poem_parser "Just give me the likes, don't pass or scroll"
+just|GIVE|me.the|LIKES|don't|PASS|or|SCROLL
 ```
 
 To parse a file:
 ```bash
 $ python -m poem_parser -f poem.txt
+RO|ses.are|RED
+VIOLETS|||are|BLUE
 ```
 
 ## License
