@@ -3,6 +3,7 @@
 import prosodic
 import os
 import sys
+from .__version__ import __version__
 
 
 LINE_DELIMITER = '<br/>'
@@ -38,7 +39,7 @@ class Poem:
 def print_help(e=None):
     if e:
         print(f'{type(e).__name__}: {str(e)}', file=sys.stderr)
-    print(f'Usage: poem_parser [-f FILENAME|TEXT|-h]',
+    print(f'Usage: poem_parser [-f FILENAME|TEXT|-h|-v]',
           file=sys.stderr)
 
 
@@ -66,6 +67,8 @@ def main():
 
         if '-h' == sys.argv[1]:
             print_help()
+        elif '-v' == sys.argv[1]:
+            print(f'poem_parser v{__version__}')
         elif '-f' == sys.argv[1]:
             filename = os.path.abspath(sys.argv[-1])
             poem = load(filename)

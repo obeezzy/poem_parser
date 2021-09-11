@@ -1,3 +1,3 @@
-from . import _poem_parser
+from . import _parser
 
-_poem_parser.main()
+_parser.main()

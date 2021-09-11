@@ -1,4 +1,4 @@
-from . import _poem_parser
+from . import _parser
 
 if __name__ == '__main__':
-    _poem_parser.main()
+    _parser.main()
