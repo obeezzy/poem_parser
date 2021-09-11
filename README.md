@@ -10,8 +10,8 @@ $ pip install poem_parser
 ## Example usage
 To parse a line:
 ```bash
-$ python -m poem_parser "Just give me the likes, don't pass or scroll"
-just|GIVE|me.the|LIKES|don't|PASS|or|SCROLL
+$ python -m poem_parser "Just give me the likes, dont pass or scroll"
+just|GIVE|me.the|LIKES|dont|PASS|or|SCROLL
 ```
 
 To parse a file:
