@@ -35,9 +35,10 @@ class Poem:
                 print(p)
 
 
-def print_help(e):
-    print(f'{type(e).__name__}: {str(e)}', file=sys.stderr)
-    print(f'Usage: poem_parser POEM_FILE',
+def print_help(e=None):
+    if e:
+        print(f'{type(e).__name__}: {str(e)}', file=sys.stderr)
+    print(f'Usage: poem_parser [-f FILENAME|TEXT|-h]',
           file=sys.stderr)
 
 
@@ -56,12 +57,23 @@ def load(filename):
 
 def main():
     try:
-        if len(sys.argv) != 2:
+        if len(sys.argv) < 2:
             raise ValueError('No poem provided.')
+        elif len(sys.argv) > 3:
+            raise ValueError('Too many arguments.')
+        elif len(sys.argv) == 3 and '-f' != sys.argv[1]:
+            raise ValueError('Invalid argument specified.')
 
-        filename = os.path.abspath(sys.argv[1])
-        poem = load(filename)
-        poem.print()
+        if '-h' == sys.argv[1]:
+            print_help()
+        elif '-f' == sys.argv[1]:
+            filename = os.path.abspath(sys.argv[-1])
+            poem = load(filename)
+            poem.print()
+        else:
+            text = sys.argv[-1]
+            poem = Poem(text)
+            poem.print()
     except Exception as e:
         print_help(e)
 
