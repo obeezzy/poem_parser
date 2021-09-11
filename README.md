@@ -1,2 +1,2 @@
 # poem_parser
-Parses words into stressed and unstressed syllables
+Parse words into stressed and unstressed syllables
