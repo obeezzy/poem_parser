@@ -7,7 +7,7 @@ README = (ROOT_DIR / "README.md").read_text()
 
 setup(
     name="poem_parser",
-    version="0.0.3",
+    version="0.0.4",
     description="Parse poems into stressed and unstressed syllables.",
     long_description=README,
     long_description_content_type="text/markdown",
